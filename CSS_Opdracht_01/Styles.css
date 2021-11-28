@@ -1,0 +1,16 @@
+body { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.black-border {
+    border: 2px dotted black;
+}
+.bg {
+    background-color: lightsteelblue;
+}
+.red-txt {
+    color: red;
+}
+.small {
+    font-size: 10px;
+}
