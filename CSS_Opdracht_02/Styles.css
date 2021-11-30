@@ -1,0 +1,33 @@
+body { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.button {
+    text-decoration: none;
+    border: solid 1px black;
+    padding: 3px;
+    background-color: #cfe2d0;
+}
+.button:hover{
+    background-color: #a5c7a7;
+}
+.box {
+    margin: 10px;
+    border: 2px solid #425eaa;
+    padding: 10px 15px;    
+}
+
+.bg {
+    background-color: #a8bbdd;
+}
+.red-txt {
+    color: red;
+}
+footer{
+    width:fit-content;
+    font-size: 10px;
+    margin:auto;
+}
+.side-by-side{
+    display:inline;
+}
