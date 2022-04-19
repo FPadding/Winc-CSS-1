@@ -1,0 +1,221 @@
+@import "./constants";
+
+//Opdracht 1
+
+body {
+  background-color: $pagebg;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.718);
+  font-size: 27px;
+}
+
+.shadow {
+  padding: 0;
+  margin: 0 auto;
+  width: $width;
+  border-radius: $border;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.279);
+  p {
+    box-sizing: border-box;
+    background-color: $textbg;
+    line-height: 2;
+    border-top-left-radius: $border;
+    border-top-right-radius: $border;
+    width: $width;
+    padding: 40px $padding (.5* $imgtotal + 5px) $padding;
+    margin: 40px auto 0 auto;
+  }
+  .paars {
+    background-color: $purplebg;
+    color: #fff;
+    width: $width;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2;
+    padding-top: (.5 * $imgtotal + 5px);
+    border-bottom-left-radius: $border;
+    border-bottom-right-radius: $border;
+    div {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 70%;
+      padding-bottom: $padding-bottom;
+    }
+  }
+}
+figure {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: $imgpadding;
+  background-color: $textbg;
+  height: $imgtotal;
+  width: $imgtotal;
+  border-radius: 100%;
+  //Ik gebruik hier position:relative, dus de margin tussen de content van opdracht 1 en 2 is nu afhankelijk van de grootte van $imgtotal.
+  //Ik zou wel willen weten hoe ik ongeveer hetzelfde met position:absolute zou kunnen doen, zodat dit niet het geval is.
+  position: relative;
+  bottom: ($imgtotal + 120px);
+  img {
+    border-radius: 100%;
+    width: $imgsize;
+  }
+}
+
+//Opdracht 2
+
+.grid {
+  display: grid;
+  gap: 20px;
+  margin: 0 70px;
+  img {
+    z-index: 1;
+    padding: 0;
+    width: 100%;
+    border-radius: $tileborder;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: $dark;
+    border-radius: $tileborder;
+    opacity: 0;
+    transition: 400ms;
+    a {
+      z-index: 3;
+      display: block;
+      background-color: $pagebg;
+      width: fit-content;
+      height: fit-content;
+      padding: 5px;
+      border-radius: 2px;
+      text-decoration: none;
+      box-shadow: 0 0 7px $pagebg;
+      &:visited, &:link {
+        color: $dark;
+      }
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .een {
+    grid-area: 1 / 1;
+  }
+  .twee {
+    grid-area: 2 / 1;
+  }
+  .drie {
+    grid-area: 3 / 1;
+  }
+  .vier {
+    grid-area: 4 / 1;
+  }
+  .vijf {
+    grid-area: 5 / 1;
+  }
+  .zes {
+    grid-area: 6 / 1;
+  }
+  .zeven {
+    grid-area: 7 / 1;
+  }
+}
+@media (min-width: 600px) {
+  .grid {
+    grid-template: auto auto auto auto / 1fr 1fr;
+    .een {
+      grid-area: 1 / 1;
+    }
+    .twee {
+      grid-area: 1 / 2;
+    }
+    .drie {
+      grid-area: 2 / 1;
+    }
+    .vier {
+      grid-area: 2 / 2;
+    }
+    .vijf {
+      grid-area: 3 / 1;
+    }
+    .zes {
+      grid-area: 3 / 2;
+    }
+    .zeven {
+      grid-area: 4 / 1;
+    }
+  }
+}
+@media (min-width: 950px) {
+  .grid {
+    grid-template: auto auto auto / 1fr 1fr 1fr;
+    .een {
+      grid-area: 1 / 1;
+    }
+    .twee {
+      grid-area: 1 / 2;
+    }
+    .drie {
+      grid-area: 1 / 3;
+    }
+    .vier {
+      grid-area: 2 / 1;
+    }
+    .vijf {
+      grid-area: 2 / 2;
+    }
+    .zes {
+      grid-area: 2 / 3;
+    }
+    .zeven {
+      grid-area: 3 / 1;
+    }
+  }
+}
+
+//Opdracht 3
+
+.social {
+  display: block;
+  position: fixed;
+  z-index: 4;
+  box-sizing: border-box;
+  width: $btnwidth;
+  height: $btnheight;
+  right: ($iconwidth - $btnwidth);
+  font-size: 17px;
+  color: #fff;
+  transition: 300ms;
+  &:hover {
+    right: 0;
+  }
+  i {
+    display: inline-block;
+    box-sizing: border-box;
+    width: $iconwidth;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 9px;
+  }
+  &.lt {
+    background-color: #e17b77;
+    bottom: ($btnbottom + 4 * $btnheight);
+  }
+  &.tw {
+    background-color: #00aced;
+    bottom: ($btnbottom + 3 * $btnheight);
+  }
+  &.li {
+    background-color: #007bb6;
+    bottom: ($btnbottom + 2 * $btnheight);
+  }
+  &.fb {
+    background-color: #3b5998;
+    bottom: ($btnbottom + $btnheight);
+  }
+  &.gh {
+    background-color: #333;
+    bottom: $btnbottom;
+  }
+}
